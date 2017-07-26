@@ -1,20 +1,18 @@
-TARGET ?= MyECU.exe
+TARGET = MyECU.exe
 
-SRCS ?= ECU_Main.cpp ECU_MapSensor.cpp
+SRCS = $(wildcard *.cpp)
 
-OBJS ?= ECU_Main.o ECU_MapSensor.o
+OBJS = $(SRCS:.cpp=.o)
 
-CXXFLAGS ?= -Wall -I
+CXXFLAGS = -w
+
+CXX = g++
 
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $@
 
-
-ECU_Main.o: ECU_Main.cpp ECU_MapSensor.h
-	$(CXX) ECU_Main.cpp -c -g
-
-ECU_MapSensor.o: ECU_MapSensor.cpp ECU_MapSensor.h
-	$(CXX) ECU_MapSensor.cpp -c -g
+%.0: %.cpp
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 .PHONY: clean
 clean:

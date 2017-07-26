@@ -1,5 +1,5 @@
-#ifndef _ECU_AIRTEMP_H_
-#define _ECU_AIRTEMP_H_
+#ifndef _ECU_CAMANGLE_H_
+#define _ECU_CAMANGLE_H_
 
 #include <stdio.h> // For printf
 
@@ -11,6 +11,7 @@ public:
 
 	void SetUpCamAngle();
 	void GetCamAngle();
+//Hello
 
 };
 

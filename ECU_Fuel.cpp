@@ -10,7 +10,7 @@ void ECU_Fuel::SetUpFuel()
 
 }
 
-uint32_t ECU_Fuel::GetFuel(ECU_MapSensor *MAP, ECU_AirTemp *AirTemp, ECU_WaterTemp *WaterTemp)
-{	//printf("ECU_MapSensor::GetMAP\n");
+uint32_t ECU_Fuel::GetFuel(ECU_MapSensor& MAP, ECU_AirTemp& AirTemp, ECU_WaterTemp& WaterTemp, Injector_Params& injectorParams)
+{	printf("ECU_Fuel::GetFuel\n");
 
 }

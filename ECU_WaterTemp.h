@@ -2,6 +2,7 @@
 #define _ECU_WATERTEMP_H_
 
 #include <stdio.h> // For printf
+#include <stdint.h>
 
 class ECU_WaterTemp
 {	

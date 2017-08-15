@@ -2,6 +2,7 @@
 #define _ECU_CAMANGLE_H_
 
 #include <stdio.h> // For printf
+#include "includes.h"
 
 class ECU_CamAngle
 {	

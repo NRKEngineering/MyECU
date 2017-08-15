@@ -2,6 +2,7 @@
 #define _ECU_AIRTEMP_H_
 
 #include <stdio.h> // For printf
+#include "includes.h"
 
 class ECU_AirTemp
 {	

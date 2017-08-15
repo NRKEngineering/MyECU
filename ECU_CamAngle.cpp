@@ -1,16 +1,18 @@
+#include "includes.h"
 #include "ECU_CamAngle.h"
 
+
 ECU_CamAngle::ECU_CamAngle()
-{	printf("ECU_MapSensor Constructor\n");
+{	printf("ECU_CamAngle Constructor\n");
 
 }
 
 void ECU_CamAngle::SetUpCamAngle()
-{	printf("ECU_MapSensor::SetUpMAP\n");
+{	printf("ECU_CamAngle::SetUpCamAngle\n");
 
 }
 
 void ECU_CamAngle::GetCamAngle()
-{	printf("ECU_MapSensor::GetMAP\n");
+{	printf("ECU_CamAngle::GetCamAngle\n");
 
 }

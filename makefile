@@ -4,7 +4,7 @@ SRCS = $(wildcard *.cpp)
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXXFLAGS = -w
+CXXFLAGS = -w -std=c++11
 
 CXX = g++
 

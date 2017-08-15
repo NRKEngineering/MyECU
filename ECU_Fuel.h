@@ -3,6 +3,8 @@
 
 #include <stdio.h> // For printf
 #include <stdint.h>
+#include "EngineParams.h"
+#include "includes.h"
 
 class ECU_MapSensor;
 class ECU_AirTemp;
@@ -15,7 +17,7 @@ public:
 	virtual ~ECU_Fuel(){};
 
 	void SetUpFuel();
-	uint32_t GetFuel(ECU_MapSensor *MAP, ECU_AirTemp *AirTemp, ECU_WaterTemp *WaterTemp);
+	uint32_t GetFuel(ECU_MapSensor& MAP, ECU_AirTemp& AirTemp, ECU_WaterTemp& WaterTemp, Injector_Params& injectorParams);
 
 };
 

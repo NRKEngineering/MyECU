@@ -1,0 +1,12 @@
+This file contains a basic rundown on the coding style of this project. By having a unified code 
+style it create a more readable and understandable code. This coding style closly follows the 
+google code style that can be found at google.github.io/styleguide/cppguide.html.
+
+Header Files
+Each header file should be self contained and endin in .h
+
+#define Guards
+All header files will have #define guards to prevent multiple inlusions. The name shall be in all 
+capitals. The format is
+
+	#define _<PROJECT>_<FILE>_H_

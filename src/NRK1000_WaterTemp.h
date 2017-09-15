@@ -1,14 +1,14 @@
-#ifndef _ECU_WATERTEMP_H_
-#define _ECU_WATERTEMP_H_
+#ifndef _NRK1000_WATERTEMP_H_
+#define _NRK1000_WATERTEMP_H_
 
 #include <stdio.h> // For printf
 #include <stdint.h>
 
-class ECU_WaterTemp
+class NRK1000_WaterTemp
 {	
 public:
-	ECU_WaterTemp();
-	virtual ~ECU_WaterTemp(){};
+	NRK1000_WaterTemp();
+	virtual ~NRK1000_WaterTemp(){};
 
 	void SetUpWaterTemp();
 	void GetWaterTemp();

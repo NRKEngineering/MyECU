@@ -1,14 +1,14 @@
-#ifndef _ECU_CAMANGLE_H_
-#define _ECU_CAMANGLE_H_
+#ifndef _NRK1000_CAMANGLE_H_
+#define _NRK1000_CAMANGLE_H_
 
 #include <stdio.h> // For printf
-#include "includes.h"
+#include "../include/NRK1000_includes.h"
 
-class ECU_CamAngle
+class NRK1000_CamAngle
 {	
 public:
-	ECU_CamAngle();
-	virtual ~ECU_CamAngle(){};
+	NRK1000_CamAngle();
+	virtual ~NRK1000_CamAngle(){};
 
 	void SetUpCamAngle();
 	void GetCamAngle();

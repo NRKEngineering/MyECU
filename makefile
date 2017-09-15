@@ -1,19 +1,21 @@
-TARGET = MyECU.exe
 
-SRCS = $(wildcard *.cpp)
+TARGET = NRK1000.exe
 
-OBJS = $(SRCS:.cpp=.o)
+CXX := g++
+LINKER := g++
+CXXFLAGS := -std=c++11 -Wall -Wextra
 
-CXXFLAGS = -w -std=c++11
+INC := -I include/
+LIBS :=
+SRC := $(wildcard src/*.cpp) 
+OBJ := $(patsubst %.cpp,%.o,$(SRC))
 
-CXX = g++
+$(TARGET): $(OBJ)
+	$(LINKER) $(CXXFLAGS) $^ $(LIBS) -o $@
 
-$(TARGET): $(OBJS)
-	$(CXX) $(OBJS) -o $@
-
-%.0: %.cpp
-	$(CXX) -c $(CXXFLAGS) $< -o $@
-
-.PHONY: clean
 clean:
-	$(RM) -r *.o $(TARGET)
+	rm -f src/*.o src/*.d $(TARGET)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
+

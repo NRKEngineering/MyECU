@@ -1,14 +1,14 @@
-#ifndef _ECU_AIRTEMP_H_
-#define _ECU_AIRTEMP_H_
+#ifndef _NRK1000_AIRTEMP_H_
+#define _NRK1000_AIRTEMP_H_
 
 #include <stdio.h> // For printf
-#include "includes.h"
+#include "../include/NRK1000_includes.h"
 
-class ECU_AirTemp
+class NRK1000_AirTemp
 {	
 public:
-	ECU_AirTemp();
-	virtual ~ECU_AirTemp(){};
+	NRK1000_AirTemp();
+	virtual ~NRK1000_AirTemp(){};
 
 	void SetUpAirTemp();
 	void GetAirTemp();

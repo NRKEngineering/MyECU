@@ -1,13 +1,13 @@
-#ifndef _ECU_CRANKANGLE_H_
-#define _ECU_CRANKANGLE_H_
+#ifndef _NRK1000_CRANKANGLE_H_
+#define _NRK1000_CRANKANGLE_H_
 
-#include "includes.h"
+#include "../include/NRK1000_includes.h"
 
-class ECU_CrankAngle
+class NRK1000_CrankAngle
 {	
 public:
-	ECU_CrankAngle();
-	virtual ~ECU_CrankAngle(){};
+	NRK1000_CrankAngle();
+	virtual ~NRK1000_CrankAngle(){};
 
 	void SetUpCrankAngle();
 	void GetCrankAngle();

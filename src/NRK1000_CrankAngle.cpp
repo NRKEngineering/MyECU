@@ -1,16 +1,16 @@
-#include "ECU_CrankAngle.h"
+#include "NRK1000_CrankAngle.h"
 
-ECU_CrankAngle::ECU_CrankAngle()
-{	printf("ECU_CrankAngle Constructor\n");
-
-}
-
-void ECU_CrankAngle::SetUpCrankAngle()
-{	printf("ECU_CrankAngle::SetUpCrankAngle\n");
+NRK1000_CrankAngle::NRK1000_CrankAngle()
+{	printf("NRK1000_CrankAngle Constructor\n");
 
 }
 
-void ECU_CrankAngle::GetCrankAngle()
-{	printf("ECU_CrankAngle::GetCrankAngle\n");
+void NRK1000_CrankAngle::SetUpCrankAngle()
+{	printf("NRK1000_CrankAngle::SetUpCrankAngle\n");
+
+}
+
+void NRK1000_CrankAngle::GetCrankAngle()
+{	printf("NRK1000_CrankAngle::GetCrankAngle\n");
 
 }

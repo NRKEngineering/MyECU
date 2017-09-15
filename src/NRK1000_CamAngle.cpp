@@ -1,18 +1,18 @@
-#include "includes.h"
-#include "ECU_CamAngle.h"
+#include "../include/NRK1000_includes.h"
+#include "NRK1000_CamAngle.h"
 
 
-ECU_CamAngle::ECU_CamAngle()
-{	printf("ECU_CamAngle Constructor\n");
-
-}
-
-void ECU_CamAngle::SetUpCamAngle()
-{	printf("ECU_CamAngle::SetUpCamAngle\n");
+NRK1000_CamAngle::NRK1000_CamAngle()
+{	printf("NRK1000_CamAngle Constructor\n");
 
 }
 
-void ECU_CamAngle::GetCamAngle()
-{	printf("ECU_CamAngle::GetCamAngle\n");
+void NRK1000_CamAngle::SetUpCamAngle()
+{	printf("NRK1000_CamAngle::SetUpCamAngle\n");
+
+}
+
+void NRK1000_CamAngle::GetCamAngle()
+{	printf("NRK1000_CamAngle::GetCamAngle\n");
 
 }

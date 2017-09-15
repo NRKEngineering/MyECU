@@ -1,17 +1,17 @@
-#include "includes.h"
-#include "ECU_AirTemp.h"
+#include "../include/NRK1000_includes.h"
+#include "NRK1000_AirTemp.h"
 
-ECU_AirTemp::ECU_AirTemp()
+NRK1000_AirTemp::NRK1000_AirTemp()
 {	printf("ECU_AirTemp Constructor\n");
 
 }
 
-void ECU_AirTemp::SetUpAirTemp()
+void NRK1000_AirTemp::SetUpAirTemp()
 {	printf("ECU_AirTemp::SetUpAirTemp\n");
 
 }
 
-void ECU_AirTemp::GetAirTemp()
+void NRK1000_AirTemp::GetAirTemp()
 {	printf("ECU_AirTemp::GetAirTemp\n");
 
 }

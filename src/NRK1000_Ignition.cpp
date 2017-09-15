@@ -1,16 +1,16 @@
-#include "ECU_Ignition.h"
+#include "NRK1000_Ignition.h"
 
-ECU_Ignition::ECU_Ignition()
-{	//printf("ECU_MapSensor Constructor\n");
-
-}
-
-void ECU_Ignition::SetUpIgnition()
-{	//printf("ECU_MapSensor::SetUpMAP\n");
+NRK1000_Ignition::NRK1000_Ignition()
+{	//printf("NRK1000_MapSensor Constructor\n");
 
 }
 
-void ECU_Ignition::GetIgnition()
-{	//printf("ECU_MapSensor::GetMAP\n");
+void NRK1000_Ignition::SetUpIgnition()
+{	//printf("NRK1000_MapSensor::SetUpMAP\n");
+
+}
+
+void NRK1000_Ignition::GetIgnition()
+{	//printf("NRK1000_MapSensor::GetMAP\n");
 
 }

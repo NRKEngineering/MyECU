@@ -1,33 +1,29 @@
 // Standard Includes
-#include "includes.h"
+#include "../include/NRK1000_includes.h"
 
 // Namespaces
 using namespace std;
 
 // Custom Includes
-#include "Global_Defines.h"
-#include "EngineParams.h"
-#include "ECU_MapSensor.h"
-#include "ECU_CamAngle.h"
-#include "ECU_CrankAngle.h"
-#include "ECU_AirTemp.h"
-#include "ECU_WaterTemp.h"
-#include "ECU_Fuel.h"
-#include "ECU_Ignition.h"
+#include "../include/NRK1000_Global_Defines.h"
+#include "../include/NRK1000_EngineParams.h"
+#include "../include/xmlParserBase.h"
+#include "NRK1000_MapSensor.h"
+#include "NRK1000_CamAngle.h"
+#include "NRK1000_CrankAngle.h"
+#include "NRK1000_AirTemp.h"
+#include "NRK1000_WaterTemp.h"
+#include "NRK1000_Fuel.h"
+#include "NRK1000_Ignition.h"
+#include "NRK1000_BasicSetup.h"
 
 // Class 
-class ECU_CrankAngle;
-class ECU_CamAngle;
-class ECU_MapSensor;
-class ECU_AirTemp;
-class ECU_WaterTemp;
-
-void Get_All_Params(All_Engine_Params * allEngine,ECU_MapSensor *MAP)
-{	allEngine->MAP.MapValue = MAP->GetMAP();
-	//AirTemp->GetAirTemp();
-	//WaterTemp->GetWaterTemp();
-
-}
+class NRK1000_CrankAngle;
+class NRK1000_CamAngle;
+class NRK1000_MapSensor;
+class NRK1000_AirTemp;
+class NRK1000_WaterTemp;
+class XmlParserBase;
 
 //******** Main function - Start of program ***********************************
 
@@ -40,25 +36,26 @@ int main()
 {	
 	// Global Variables
 	uint32_t mainTick = 0;		// Main system tick
-	
 
-	/* Need to set up xml file for all configurable engine params.
-	   Then they can be loaded into the program here.
-	*/
 
 	// **** Set up param structs
 	unique_ptr <All_Engine_Params> allEngine (new All_Engine_Params);
 
+	// Read Config file and setup parameters
+	string ConfigFile = "config/NRK1000_Main_Config.xml";
+	unique_ptr <NRK1000_Basic_Setup> basicSetup (new NRK1000_Basic_Setup(ConfigFile));
+	
+	
 	// **** Set up sensors
 
 	// Create objects
-	unique_ptr <ECU_CrankAngle> CrankAngle (new ECU_CrankAngle);
-	unique_ptr <ECU_CamAngle> CamAngle (new ECU_CamAngle);
-	unique_ptr <ECU_MapSensor> MAP (new ECU_MapSensor);
-	unique_ptr <ECU_AirTemp> AirTemp (new ECU_AirTemp);
-	unique_ptr <ECU_WaterTemp> WaterTemp (new ECU_WaterTemp);
-	unique_ptr <ECU_Fuel> Fuel (new ECU_Fuel);
-	unique_ptr <ECU_Ignition> Ignition (new ECU_Ignition);
+	unique_ptr <NRK1000_CrankAngle> CrankAngle (new NRK1000_CrankAngle);
+	unique_ptr <NRK1000_CamAngle> CamAngle (new NRK1000_CamAngle);
+	unique_ptr <NRK1000_MapSensor> MAP (new NRK1000_MapSensor);
+	unique_ptr <NRK1000_AirTemp> AirTemp (new NRK1000_AirTemp);
+	unique_ptr <NRK1000_WaterTemp> WaterTemp (new NRK1000_WaterTemp);
+	unique_ptr <NRK1000_Fuel> Fuel (new NRK1000_Fuel);
+	unique_ptr <NRK1000_Ignition> Ignition (new NRK1000_Ignition);
 	
 	// Run setup functions for each object	
 	CrankAngle->SetUpCrankAngle();
@@ -69,11 +66,19 @@ int main()
 	Fuel->SetUpFuel();
 	Ignition->SetUpIgnition();
 
+	
 	// **** Set up outputs
 
-	// **** Program main loop
+	// **** Create some threads
 
-	
+		// Get the maximum number of threads the processor can support
+		//int numThreads = thread::hardware_concurrency();
+		//cout << "Number of threads is " << numThreads << endl;
+		
+		// Create the thread pool
+		//thread t[numThreads];
+
+	// **** Program main loop
 // Main Loop Logic- FIXME keep adding to this as the program grows
 // Get all the current sensor values
 // Calculate the fuel needed
@@ -82,22 +87,24 @@ int main()
 // Calcualte nitros control
 // TODO - add further module controls here
 // Complete error checks
-	int loop = 0;
+	int loop = 1;
 	while(loop)
 	{	
-		// Get Sensors Vaules	
-		//Get_All_Params(allEngine, *MAP);
+		// Get Sensors Vaules	// Could run in thread in background
 
 		// Calculate fuel
-		// Needs to use MAP, Air & water Temps and injector details to calcaulte injector PWM time
-		// This vaule is them placed into injectorPWM
-		//injectorPWM = Fuel->GetFuel(*allEngine);
+		
+		// Calculate Cam
+
+		// Calculate Crank
+
+		// Calculate Ingnition
+
 
 		// Calcualte ignition timing
-		//CrankAngle->GetCrankAngle();
-		//CamAngle->GetCamAngle();
 
-		//cout << "Hello Me" << endl;
+	
+
 		//cout << mainTick << endl;
 		mainTick++;
 	}

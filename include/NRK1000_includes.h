@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <iostream>
-#include <memory>
+#include <memory>	// For smart pointers
 #include <thread>
 #include <string>
 

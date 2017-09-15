@@ -49,22 +49,22 @@ int main()
 	// **** Set up sensors
 
 	// Create objects
-	unique_ptr <NRK1000_CrankAngle> CrankAngle (new NRK1000_CrankAngle);
-	unique_ptr <NRK1000_CamAngle> CamAngle (new NRK1000_CamAngle);
-	unique_ptr <NRK1000_MapSensor> MAP (new NRK1000_MapSensor);
-	unique_ptr <NRK1000_AirTemp> AirTemp (new NRK1000_AirTemp);
-	unique_ptr <NRK1000_WaterTemp> WaterTemp (new NRK1000_WaterTemp);
-	unique_ptr <NRK1000_Fuel> Fuel (new NRK1000_Fuel);
-	unique_ptr <NRK1000_Ignition> Ignition (new NRK1000_Ignition);
+	unique_ptr <NRK1000_CrankAngle> pCrankAngle (new NRK1000_CrankAngle);
+	unique_ptr <NRK1000_CamAngle> pCamAngle (new NRK1000_CamAngle);
+	unique_ptr <NRK1000_MapSensor> pMAP (new NRK1000_MapSensor);
+	unique_ptr <NRK1000_AirTemp> pAirTemp (new NRK1000_AirTemp);
+	unique_ptr <NRK1000_WaterTemp> pWaterTemp (new NRK1000_WaterTemp);
+	unique_ptr <NRK1000_Fuel> pFuel (new NRK1000_Fuel);
+	unique_ptr <NRK1000_Ignition> pIgnition (new NRK1000_Ignition);
 	
 	// Run setup functions for each object	
-	CrankAngle->SetUpCrankAngle();
-	CamAngle->SetUpCamAngle();
-	MAP->SetUpMAP();
-	AirTemp->SetUpAirTemp();
-	WaterTemp->SetUpWaterTemp();
-	Fuel->SetUpFuel();
-	Ignition->SetUpIgnition();
+	pCrankAngle->SetUpCrankAngle();
+	pCamAngle->SetUpCamAngle();
+	pMAP->SetUpMAP();
+	pAirTemp->SetUpAirTemp();
+	pWaterTemp->SetUpWaterTemp();
+	pFuel->SetUpFuel();
+	pIgnition->SetUpIgnition();
 
 	
 	// **** Set up outputs

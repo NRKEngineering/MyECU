@@ -7,7 +7,7 @@ using namespace std;
 // Custom Includes
 #include "../include/NRK1000_Global_Defines.h"
 #include "../include/NRK1000_EngineParams.h"
-#include "../include/xmlParserBase.h"
+#include "XmlParserBase.h"
 #include "NRK1000_MapSensor.h"
 #include "NRK1000_CamAngle.h"
 #include "NRK1000_CrankAngle.h"

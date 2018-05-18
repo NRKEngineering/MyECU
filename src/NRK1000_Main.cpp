@@ -72,11 +72,16 @@ int main()
 	// **** Create some threads
 
 		// Get the maximum number of threads the processor can support
-		//int numThreads = thread::hardware_concurrency();
-		//cout << "Number of threads is " << numThreads << endl;
+		int numThreads = thread::hardware_concurrency();
+		cout << "Number of threads is " << numThreads << endl;
 		
 		// Create the thread pool
 		//thread t[numThreads];
+		
+		//int simOn = 1;
+		//std::thread t(pCrankAngle->SimAngle(simOn));
+
+		//pCrankAngle->SimAngle(1);
 
 	// **** Program main loop
 // Main Loop Logic- FIXME keep adding to this as the program grows

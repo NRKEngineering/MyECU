@@ -11,6 +11,7 @@ public:
 
 	void SetUpCrankAngle();
 	void GetCrankAngle();
+	void SimAngle(int fsim);
 
 };
 

@@ -34,6 +34,7 @@ struct Fuel_Params
 
 struct Ignition_Params
 {	Ignitor_Params spark;
+	uint8_t crankAngle;
 
 };
 

@@ -49,7 +49,7 @@ int main()
 	// **** Set up sensors
 
 	// Create objects
-	unique_ptr <NRK1000_CrankAngle> pCrankAngle (new NRK1000_CrankAngle);
+	unique_ptr <NRK1000_CrankAngle> pCrankAngle (new NRK1000_CrankAngle(*allEngine));
 	unique_ptr <NRK1000_CamAngle> pCamAngle (new NRK1000_CamAngle);
 	unique_ptr <NRK1000_MapSensor> pMAP (new NRK1000_MapSensor);
 	unique_ptr <NRK1000_AirTemp> pAirTemp (new NRK1000_AirTemp);
@@ -58,7 +58,7 @@ int main()
 	unique_ptr <NRK1000_Ignition> pIgnition (new NRK1000_Ignition);
 	
 	// Run setup functions for each object	
-	pCrankAngle->SetUpCrankAngle();
+	pCrankAngle->SetUpCrankAngle(*allEngine);
 	pCamAngle->SetUpCamAngle();
 	pMAP->SetUpMAP();
 	pAirTemp->SetUpAirTemp();
@@ -76,8 +76,12 @@ int main()
 		cout << "Number of threads is " << numThreads << endl;
 		
 		// Create the thread pool
+		//ctpl::thread_pool threadPool(numThreads);	// A test of the ctpl library
 		//thread t[numThreads];
-		
+
+		//int threadCnt = threadPool.size();
+		//cout << "Number of ctpl threads is " << threadCnt << endl;
+
 		//int simOn = 1;
 		//std::thread t(pCrankAngle->SimAngle(simOn));
 
@@ -95,13 +99,16 @@ int main()
 	int loop = 1;
 	while(loop)
 	{	
-		// Get Sensors Vaules	// Could run in thread in background
+
+		// Calculate Crank
+		pCrankAngle->GetCrankAngle(*allEngine);
+		// Get Sensors Values	// Could run in thread in background
 
 		// Calculate fuel
 		
 		// Calculate Cam
 
-		// Calculate Crank
+		
 
 		// Calculate Ingnition
 

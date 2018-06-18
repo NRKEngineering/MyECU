@@ -66,7 +66,38 @@ int main()
 	pFuel->SetUpFuel();
 	pIgnition->SetUpIgnition();
 
-	
+	// **** Inputs
+     /* Crank - Digital
+        Cam - Digital
+        Map - analog
+        MAF - Voltage - Analog
+        MAF - Frequency
+        IAT - Analog
+        CLT - Analog
+        TPS - Analog
+        O2 - Analog
+        Flex - Analog
+        Knock - digital
+        Speed sensor - digital
+        EGT - Analog(Thermocouple)
+
+        Inputs - 4 x digital
+                 8 x analog
+        
+        */
+    // **** Outputs
+        /*
+        Fuel Injector
+        Ignition
+        Fuel Pump
+        Idle Valve
+        Tacho
+        PWM Relays
+        Alternator control
+        
+
+        */
+
 	// **** Set up outputs
 
 	// **** Create some threads
